@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace laboratorioBim1
 {
     class Facturacion
     {
+        
         static string ruta = "factura.txt";
         static StreamWriter escribir;
         static StreamReader leer;
@@ -38,7 +40,7 @@ namespace laboratorioBim1
             while (op != 'n')
             {
                 productos(llenar("Nombre del producto"));
-                sub();
+                tot();
                 Console.WriteLine("Otro  producto [s/n]: ");
                 op = char.Parse(Console.ReadLine());
             }
@@ -66,7 +68,7 @@ namespace laboratorioBim1
             escribir.WriteLine("Nombre del Producto:  " + NombreProducto);
             escribir.Close();
         }
-        static void sub()
+        static void tot()
         {
             double precio = 0;
             double cant = 0;
