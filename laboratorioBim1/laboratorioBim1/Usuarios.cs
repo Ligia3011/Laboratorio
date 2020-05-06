@@ -29,9 +29,9 @@ namespace laboratorioBim1
 
                     Console.WriteLine("Ingrese la contrasena");
                     int password = int.Parse(Console.ReadLine());
-                    if (password ==122 )
+                    if (password ==123 )
                     {
-                        Console.WriteLine("Que desea hacer?\n1.Crear usuario\n2.Mostrar Inventario\n3.Mostrar Usuarios\n4. Mostrar Facturas");
+                        Console.WriteLine("Que desea realizar?\n1.Crear usuario\n2.Mostrar Inventario\n3.Mostrar Usuarios\n4. Mostrar Facturas");
                         int admin = int.Parse(Console.ReadLine());
                         if (admin == 1)
                         {
@@ -59,10 +59,10 @@ namespace laboratorioBim1
                 else if (user == 'T')
                 {
                     Console.WriteLine("Ingrese la contrasena");
-                    int contra = int.Parse(Console.ReadLine());
-                    if (contra == 456)
+                    int password = int.Parse(Console.ReadLine());
+                    if (password == 456)
                     {
-                        Console.WriteLine("Que desea realizar?\n1.cargar inventario\n2.Facturar producto");
+                        Console.WriteLine("Que desea realizar?\n1.Cargar Inventario de la empresa\n2.Facturar productos de la empresa");
                         int admi = int.Parse(Console.ReadLine());
                         if (admi == 1)
                         {

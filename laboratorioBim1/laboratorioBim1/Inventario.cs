@@ -20,7 +20,7 @@ namespace laboratorioBim1
         public void ingreso()
         {
             escribir = File.AppendText(ruta);
-            Console.WriteLine("Por Favor Ingresar datos del inventario");
+            Console.WriteLine("Por Favor Ingresar datos del producto");
             Console.WriteLine("Ingrese fecha");
             string fecha = Console.ReadLine();
             escribir.WriteLine(fecha);
@@ -48,10 +48,10 @@ namespace laboratorioBim1
             return (Console.ReadLine());
         }
 
-        public void baja()
+        public void dardebajaprod()
         {
             mostrarinv();
-            Console.WriteLine("ingrese la cantidad a descontar en el inventario");
+            Console.WriteLine("Ingresar la cantidad que desea que se descuente en el inventario");
             int desc = int.Parse(Console.ReadLine());
             int cambio = cantidad - desc;
         }

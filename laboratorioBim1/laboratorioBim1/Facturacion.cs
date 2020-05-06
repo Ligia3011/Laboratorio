@@ -41,7 +41,7 @@ namespace laboratorioBim1
             {
                 productos(llenar("Nombre del producto"));
                 tot();
-                Console.WriteLine("Otro  producto [s/n]: ");
+                Console.WriteLine("Desea agregar otro producto [s/n]: ");
                 op = char.Parse(Console.ReadLine());
             }
 
