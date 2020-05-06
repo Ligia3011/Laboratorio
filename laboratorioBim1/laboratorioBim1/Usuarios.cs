@@ -5,103 +5,83 @@ using System.IO;
 
 namespace laboratorioBim1
 {
-    class Usuarios
-    {
-        Inventario inve = new Inventario();
-        static string ruta = "Ususarios.txt";
-        Facturacion fact = new Facturacion();
-        static StreamReader leer;
-        static StreamWriter escribir;
-
-        static void u()
+    
+        class Usuarios
         {
-            escribir = File.AppendText(ruta);
-            escribir.WriteLine("Admin01");
-            escribir.Close();
-        }
-
-        public void UsuaPrinc()
-        {
-            Console.WriteLine("El usuario que requiere es administrador o trabajador [A/T]");
-            char user1 = char.Parse(Console.ReadLine());
-            if(user1== 'A') 
+            Inventario inve = new Inventario();
+            Facturacion fact = new Facturacion();
+            static string ruta = "Usuarios.txt";
+            static StreamReader leer;
+            static StreamWriter escribir;
+            static void u()
             {
-                Console.WriteLine("Ingrese la contraseña del usuario");
-                int password = int.Parse(Console.ReadLine());
-                if(password==789) 
-                {
-                    Console.WriteLine("Que opcion desea realizar:\n1.Crear usuario\n2.Mostrar inventario\n3.Mostrar usuarios\n4.Mostrar Facturas");
-                    int admin = int.Parse(Console.ReadLine());
-                    if(admin==1) 
-                    {
-                        crear(llenar("nombre"), llenar("contraseña"));
-                    }
-                    if (admin == 2)
-                    {
-                        inve.mostrarinv();
-                    }
-                    if (admin == 3)
-                    {
-                        Console.WriteLine(buscar(llenar("Ingresar el nombre que desea buscar")));
-                    }
-                    if (admin == 4)
-
-                    {
-                        fact.mostrarfac();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Usuario NO AUTORIZADO");
-                    }
-                    static void crear(string nombre, string contraseña)
-                    {
-                        escribir = File.AppendText(ruta);
-                        escribir.WriteLine(nombre + "" + contraseña);
-                        escribir.Close();
-
-                           
-
-                    }
-                    static string llenar(string dato)
-                    {
-                        Console.WriteLine("Ingresar"+dato+ ":");
-                        return (Console.ReadLine());
-
-
-
-                    }
+                escribir = File.AppendText(ruta);
+                escribir.WriteLine("Admin01");
+                escribir.Close();
             }
-            static string buscar(string dato)
+            public void UsuaPri()
             {
-                string linea = "Usuario no encontrado";
-                leer = File.OpenText(ruta);
-                linea = leer.ReadToEnd();
-                return linea;
 
-        }
-            }
-            else if(user1== 'T')
-            {
-                Console.WriteLine("Ingrese la contraseña del usuario");
-                int password = int.Parse(Console.ReadLine());
-                if (password == 456) 
+                Console.WriteLine("Su puesto es de Administrador o Trabajador [A/T]");
+                char user = char.Parse(Console.ReadLine());
+                if (user == 'A')
                 {
-                    Console.WriteLine("Que opcion desea realizar:\n1.Cargar Inventario\n2.Mostrar Facturas");
-                    int trab = int.Parse(Console.ReadLine());
-                    if (trab == 1) 
+
+                    Console.WriteLine("Ingrese la contrasena");
+                    int contra = int.Parse(Console.ReadLine());
+                    if (contra == 123)
                     {
-                        inv.ingreso();
-                    }
-                    if (trab == 2)
-                    {
-                        fact.Facturacion();
+                        Console.WriteLine("Que desea hacer?\n1.Crear usuario\n2.Mostrar Inventario\n3.Mostrar Usuarios\n4. Mostrar Facturas");
+                        int admin = int.Parse(Console.ReadLine());
+                        if (admin == 1)
+                        {
+                            crear(llenar("nombre"), llenar("contrasena"), llenar("cargo"));
+
+                        }
+                        if (admin == 2)
+                        {
+                            inve.mostrarinv();
+                        }
+                        if (admin == 3)
+                        {
+                            Console.WriteLine(mostrarUsuario(llenar("ingrese nombre a buscar")));
+                        }
+                        if (admin == 4)
+                        {
+                            fact.msfac();
+                        }
                     }
                     else
                     {
                         Console.WriteLine("Usted no esta autorizado para ingresar a esta area");
                     }
                 }
+                else if (user == 'T')
+                {
+                    Console.WriteLine("Ingrese la contrasena");
+                    int contra = int.Parse(Console.ReadLine());
+                    if (contra == 456)
+                    {
+                        Console.WriteLine("Que desea hacer?\n1.cargar inventario\n2.Facturar producto");
+                        int admin = int.Parse(Console.ReadLine());
+                        if (admin == 1)
+                        {
+                            inve.ingreso();
+                        }
+                        else if (admin == 2)
+                        {
+                            fact.facturacion();
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Usted no esta autorizado para ingresar a esta area");
+                    }
+                }
+
             }
+
             static void crear(string nombre, string contrasena, string cargo)
             {
                 escribir = File.AppendText(ruta);
@@ -120,8 +100,10 @@ namespace laboratorioBim1
                 linea = leer.ReadToEnd();
                 return linea;
             }
+
         }
+    }
 
 
-}
-}
+
+

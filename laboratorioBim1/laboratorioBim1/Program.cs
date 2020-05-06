@@ -9,14 +9,15 @@ namespace laboratorioBim1
             Usuarios usu = new Usuarios();
             Inventario inve = new Inventario();
             Facturacion fact = new Facturacion();
-            Console.WriteLine("Sistema de ventas de Empresa LOS PATOS");
-            
+            Console.WriteLine("            Sistema de la  Empresa LOS PATOS            ");
+            Console.WriteLine("   EMPRESA LOS PATOS La mejor empresa de aparatos electronicos   ");
+
 
             char op = 'n';
             while(op! == 's')
             {
                
-                    usu.UsuaPrinc();
+                    usu.UsuaPri();
                 
                 
                 Console.WriteLine("Desea salir [s/n]");
